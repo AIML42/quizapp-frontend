@@ -1,0 +1,111 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8));
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .home-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #00ddeb;
+    text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
+    margin-bottom: 40px;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .home-cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 221, 235, 0.3);
+  }
+  
+  .create-game-card {
+    border-left: 4px solid #00ddeb;
+  }
+  
+  .join-game-card {
+    border-left: 4px solid #ff2e63;
+  }
+  
+  .card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #00ddeb;
+    box-shadow: 0 0 5px rgba(0, 221, 235, 0.5);
+  }
+  
+  .input-field::placeholder {
+    color: rgba(224, 224, 224, 0.5);
+  }
+  
+  .action-button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #00ddeb, #ff2e63);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background: linear-gradient(90deg, #ff2e63, #00ddeb);
+    transform: scale(1.05);
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
+    }
+    to {
+      text-shadow: 0 0 20px rgba(0, 221, 235, 0.8);
+    }
+  }
+
+  select.input-field option{
+    color: black; /* Placeholder color */
+  }

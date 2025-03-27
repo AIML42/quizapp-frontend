@@ -1,0 +1,308 @@
+.game-room-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #e0e0e0;
+  }
+  
+
+  
+  .player-sections {
+    flex: 1;
+    display: grid;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .player-section {
+    padding: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 0.3s ease;
+    position: relative;
+  }
+  
+  .player-section:last-child {
+    border-right: none;
+  }
+  
+  .current-player {
+    background: rgba(0, 221, 235, 0.05);
+    border-left: 4px solid #00ddeb;
+  }
+  
+  .player-section.answered {
+    background: rgba(255, 215, 0, 0.1);
+    border-left: 4px solid #ffd700;
+  }
+  
+  .player-section.winner {
+    background: rgba(0, 255, 0, 0.1);
+    border-left: 4px solid #00ff00;
+    animation: pulse 1s infinite;
+  }
+  
+  .player-section.loser {
+    background: rgba(255, 0, 0, 0.1);
+    border-left: 4px solid #ff0000;
+  }
+  
+  .player-section:not(.current-player) .question-section {
+    position: relative;
+  }
+  
+  .player-section:not(.current-player) .question-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+  }
+  
+  .player-section:not(.current-player) .option-button {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .player-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .player-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e0e0e0;
+  }
+  
+  .player-info p {
+    font-size: 1.2rem;
+    color: #00ddeb;
+  }
+  
+  .countdown-message {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .countdown-message p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ff2e63;
+    text-shadow: 0 0 5px rgba(255, 46, 99, 0.5);
+  }
+  
+  .waiting-message {
+    text-align: center;
+  }
+  
+  .waiting-message p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #00ddeb;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  .question-section {
+    text-align: center;
+    max-width: 80%;
+  }
+  
+  .question-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .option-button {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #00ddeb;
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .option-button:hover {
+    background: rgba(0, 221, 235, 0.2);
+    transform: scale(1.05);
+  }
+  
+  .option-button.disabled {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .round-result {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .round-result p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .round-result span {
+    color: #00ddeb;
+    font-weight: 600;
+  }
+  
+  /* Game Over Styles */
+  .game-over {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  
+  .game-over-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff2e63;
+    text-shadow: 0 0 10px rgba(255, 46, 99, 0.5);
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+  }
+  
+  .final-scores {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .score-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+  
+  .score-card span:first-child {
+    color: #e0e0e0;
+  }
+  
+  .score-card span:last-child {
+    color: #00ddeb;
+    font-weight: 600;
+  }
+  
+  .play-again-button {
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #00ddeb, #ff2e63);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .play-again-button:hover {
+    background: linear-gradient(90deg, #ff2e63, #00ddeb);
+    transform: scale(1.05);
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    }
+  }
+
+  .game-header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .game-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #00ddeb;
+    text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+
+  .game-header .copy-button {
+    padding: 5px 10px;
+    background: linear-gradient(90deg, #00ddeb, #ff2e63);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .game-header .copy-button:hover {
+    background: linear-gradient(90deg, #ff2e63, #00ddeb);
+    transform: scale(1.05);
+  }
+  
+  .game-header h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ff2e63;
+  }
