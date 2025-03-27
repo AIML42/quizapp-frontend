@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:4000', {
+const socket = io('https://quizapp-backend-n67n.onrender.com', {
   withCredentials: true,
 });
 
